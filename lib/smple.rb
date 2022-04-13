@@ -4,5 +4,5 @@ require_relative "smple/version"
 
 module Smple
   class Error < StandardError; end
-  # Your code goes here...
+  puts "Hello, World!"
 end
