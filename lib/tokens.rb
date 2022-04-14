@@ -1,9 +1,12 @@
 # TOKEN TYPES #
-KEYWORD = "KEYWORD"
-DQUOTES = "DQUOTES"
-LPAREN  = "LPAREN"
-RPAREN  = "RPAREN"
-STRING  = "STRING"
+KEYWORD     = "KEYWORD"
+DQUOTES     = "DQUOTES"
+LPAREN      = "LPAREN"
+RPAREN      = "RPAREN"
+STRING      = "STRING"
+EQUALS      = "EQUALS"
+VAR         = "VAR"
+END_OF_LINE = "END_OF_LINE"
 
 # TOKEN CLASS #
 class Token 
@@ -18,15 +21,3 @@ class Token
     return "< #{@tok_type} >"
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-

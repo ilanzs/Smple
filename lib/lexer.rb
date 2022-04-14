@@ -31,7 +31,7 @@ class Lexer
     @col += 1
     # if index is out of range it will automatically set @current_char to nil
     @current_char = @text[@index..@index]
-    if @current_char == '\n'
+    if @current_char == "\n"
       @col = 0
       @row += 1
       advance
@@ -48,6 +48,7 @@ class Lexer
   end
   
   def make_string()
+    # TODO: Implement Escape Sequences
     string = "\""
     advance
     while @current_char != "\""
@@ -61,7 +62,6 @@ class Lexer
 
   def lex
     token_arr = []
-    err = nil
     while @current_char != ""
       if @current_char == " " or @current_char == "\t"
         advance
@@ -74,7 +74,18 @@ class Lexer
         token_arr.append(Token.new(RPAREN))
         advance
       elsif @current_char =~ /[a-zA-Z]/
-        token_arr.append(Token.new(KEYWORD, make_word))
+        word = make_word
+        if word == "var"
+          token_arr.append(Token.new(VAR))
+        else
+          token_arr.append(Token.new(KEYWORD, word))
+        end
+      elsif @current_char == "="
+        token_arr.append(Token.new(EQUALS))
+        advance
+      elsif @current_char == ";"
+        token_arr.append(Token.new(END_OF_LINE))
+        advance
       else
         return [], InvalidCharacterError.new(@row, @col, @current_char, @file)
       end
