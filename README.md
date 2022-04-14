@@ -1,8 +1,8 @@
 # Smple
 
-Smple is my pet programming language. I am making it because I want to
-learn how to make compilers / interpreters. I am not sure currently what this will become or 
-where this will go so if you can contribute that would be quite helpful.
+Smple pronounced "Simple" is my pet programming language. I am making it because I want to
+learn how to make compilers / interpreters. I am not sure where I am going to take this language,
+but I think it is going to be a stack based programming language like forth.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-I don't really know as of now.
+There is no usage yet since Smple is still in the early stages of development.
 
 ## Development
 
